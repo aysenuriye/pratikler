@@ -1,0 +1,15 @@
+  //   Scanner scan = new Scanner(System.in);
+        //   System.out.println("lütfen kelimeyi giriniz");
+        //   String kelime = scan.next();
+        //   int k1 = kelime.length();
+        //   if (k1 < 5) {
+        //       System.out.println("çok kısa");
+        //   } else if (k1 > 5) {
+        //       System.out.println("çok uzun");
+        //   } else {
+        //       System.out.println(
+        //               kelime.substring(4,5)+
+        //               kelime.substring(3,4)+
+        //               kelime.substring(2,3)+
+        //               kelime.substring(1,2)+
+        //               kelime.substring(0,1));}
