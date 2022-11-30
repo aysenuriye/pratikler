@@ -1,0 +1,28 @@
+package soru_cozumu.soru_12;
+
+import java.util.Scanner;
+
+public class gun12_3soru {
+
+//     Kullanicidan main method icinde bir tamsayi alin. Girilen sayinin pozitif tam
+        //     bolenleri sayisini bulup bize donduren bir method olusturun
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("lutfen bir tam sayı girin");
+        int sayi = scan.nextInt();
+        pozitifBolenleriBulma(sayi);
+
+
+    }
+
+    public static int pozitifBolenleriBulma(int sayi) {
+        for (int i = 1; i < sayi; i++) {
+            if (sayi % i == 0) {
+                System.out.print(i+" , ");
+            }
+
+        }
+
+return sayi;
+    }
+}
