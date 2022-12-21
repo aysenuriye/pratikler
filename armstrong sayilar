@@ -1,0 +1,26 @@
+package Youtube_kodlama_vakti_sorular;
+
+public class Video_36 {
+    public static void main(String[] args) {
+        //armstrong sayilarini bulma
+
+        //  153=(1*1*1)+(5*5*5)+(3*3*3)
+        int temp, birler, onlar, yuzler, top;
+        for (int i = 100; i <= 999; i++) {
+            temp = i;
+            birler = temp % 10;
+            temp /= 10;
+
+            onlar = temp % 10;
+            temp /= 10;
+
+            yuzler = temp % 10;
+            temp /= 10;
+
+            top = (birler * birler * birler) + (yuzler * yuzler * yuzler) + (onlar * onlar * onlar);
+            if (top == i) {
+                System.out.println(i + " astr sayi");
+            }
+        }
+    }
+}
