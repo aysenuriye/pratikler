@@ -1,0 +1,26 @@
+package odevler.arrays;
+
+public class soru_3_arrays_elementleri_carp {
+    public static void main(String[] args) {
+       // Verilen 2 katli bir array’de bulunan tum sayilarin carpinini bize donduren bir
+       // method olusturun
+
+        double[][] arr={{3,2,3,3},{4,6,3},{2,4},{6,5,1}};
+        elementleriCarp(arr);
+
+    }
+    public static void elementleriCarp(double[][] arr){
+
+
+         double carpim=1;
+        for (int i = 0; i < arr.length ; i++) {
+            for (int j = 0; j <arr[i].length ; j++) {
+
+                carpim =carpim* arr[i][j];
+
+            }
+
+        }
+        System.out.println("tum elementlerin carpimi  = " + carpim);
+    }
+}
