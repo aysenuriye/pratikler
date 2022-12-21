@@ -1,0 +1,65 @@
+package Youtube_kodlama_vakti_sorular;
+
+import java.util.Scanner;
+
+public class video_39 {
+    /*ATM OLUŞTURUN -KULLANICI -FARKLI BİR GİRİŞ YAPTIĞINDA DÖNGÜ DEVAM ETSİN,
+    BAKİYE EKSİ OLDUĞUNDA  VEYA ÇIKMAK İSTEDİĞİNDE
+    DÖNGÜ BİTSİN
+    1 -)  Para yatır
+2 -)  Para çek
+3 -)   Bakiye sorgula
+4 -)   Çıkış yap
+     */
+    public static void main(String[] args) {
+
+        int bakiye = 1000, input, miktar;
+
+        Scanner scan = new Scanner(System.in);
+
+        System.err.println("****~~~~MERHABALAR JAVA BANKA HOŞGELDİNİZ~~~~****");
+
+        System.out.println("GÜNCEL BAKİYENİZ ");
+        System.err.println(   bakiye + " TL");
+
+
+
+        while (bakiye >= 0) {
+            System.out.println();
+            System.out.println("1 -)  Para yatır");
+            System.out.println("2 -)  Para çek");
+            System.out.println("3 -)   Bakiye sorgula");
+            System.out.println("4 -)   Çıkış yap");
+            System.out.println("Yapmak istediğiniz işlemi seçiniz");
+            input = scan.nextInt();
+
+            if (input == 1) {
+                System.out.println("Yatırmak istediğniz miktar : ");
+                miktar = scan.nextInt();
+                bakiye += miktar;
+            } else if (input == 2) {
+                System.out.println("Çekmek istediğiniz miktar");
+                miktar = scan.nextInt();
+                if (miktar > bakiye) {
+                    System.err.println("YETERSİZ bakiye");
+                } else {
+                    bakiye -= miktar;
+
+                }
+            } else if (input == 3) {
+                System.out.println("GÜNCEL bakiyeniz : " + bakiye + "TL");
+
+
+            } else if (input == 4) {
+                System.out.println("Çıkış yapılıyor!!");
+                break;
+
+
+            } else {
+                System.err.println("YANLIŞ GİRİŞ YAPTINIZ");
+            }
+
+
+        }
+        System.err.println("HAVE A GOOD DAY");
+    }
