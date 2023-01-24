@@ -1,0 +1,105 @@
+package practice;
+
+import java.util.Scanner;
+
+public class Manav_alisveris_listesi {
+    /* Basit bir 5 ürünlü manav alisveris programi yaziniz.
+
+   1. Adim : urun listesinden urun sectir ve kac kilo oldugunu sor.
+   2. Adim : Baska bir urun almak isteyip istemedigini sor. istemiyorsa toplam miktari goster, istiyorsa tekrar urun sectir. Bu islemi alisverisi
+    bitirmek isteyene kadar tekrarla.
+            3. Adim : Musteri her urun sectiginde, aldigi urunun fiyatini toplam fiyata ekle.
+   4. Adim : Alisveris bitince toplam odemesi gereken tutari goster
+   */static int product = 0;
+    static double weight = 0;
+
+    static double total = 0;
+    static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        System.out.print("herhangi bir şey satın alamk istiyormusnuz? (E/H): ");
+        char answer = input.next().charAt(0);
+
+        if (answer == 'e' || answer == 'E') {
+            while (answer == 'e' || answer == 'E') {
+                menumanav();
+                switch (product) {
+                    case 1:
+                        elma();
+                        break;
+                    case 2:
+                        muz();
+                        break;
+                    case 3:
+                        Patates();
+                        break;
+                    case 4:
+                        kivi();
+                        break;
+                    case 5:
+                        havuc();
+                        break;
+                    default:
+                        System.out.println("yanlış işlem tercihi");
+                }
+
+                System.out.print("herhangi bir şey satın alamk istiyormusnuz? (E/H): ");
+                answer = input.next().charAt(0);
+            }
+        }else {
+            System.out.println("almayacaksan neden geldin!!!!!");
+        }
+        if (total>0 ) {
+            System.err.println("ödemeniz gereken toplam tutar=" + total);
+        }
+    }
+
+
+    private static void elma() {
+        total += weight * 1;
+     System.out.println("toplam tutar= " + total);
+    }
+
+    private static void muz() {
+        total += weight * 1.5;
+       System.out.println("toplam tutar= " + total);
+    }
+
+    private static void Patates() {
+        total += weight * 0.5;
+      System.out.println("toplam tutar= " + total);
+    }
+
+    private static void havuc() {
+        total += weight * 0.75;
+        System.out.println("toplam tutar= " + total);
+    }
+
+    private static void kivi() {
+        total += weight * 2;
+        System.out.println("toplam tutar= " + total);
+    }
+
+
+    private static void menumanav () {
+
+            System.out.println("Ürünler: ");
+            System.out.println("1. Elma (1 TL/kg)");
+            System.out.println("2. Muz (1.5 TL/kg)");
+            System.out.println("3. Patates (0.5 TL/kg)");
+            System.out.println("4. Kivi (2 TL/kg)");
+            System.out.println("5. Havuç (0.75 TL/kg)");
+
+            System.out.print("Seçtiğiniz ürün: ");
+            product = input.nextInt();
+            System.out.print("Kaç kilo ürün almak istiyorsunuz: ");
+            weight = input.nextDouble();
+
+
+        }
+    }
+
+
+
+
