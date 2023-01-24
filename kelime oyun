@@ -1,0 +1,53 @@
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        String[] kelimeListesi = {"java", "bilgisayar","yeni", "araba","laptop","siyah", "calıskan","program","sabah","dunya"};
+        Random rand = new Random();
+        int secilenKelimeIndex = rand.nextInt(kelimeListesi.length);
+        String secilenKelime = kelimeListesi[secilenKelimeIndex];
+
+        // Test kodu
+        System.out.println("Pssst, çözüm " + secilenKelime.length() + ".");
+
+        // TODO-1: Boş bir dizi oluşturun ve adı "display" olsun...
+        // Secilen kelime içindeki her harf için "display" dizisine "_" ekleyin.
+        // Örneğin, secilen kelime "apple" ise, display dizisi ["_", "_", "_", "_", "_"] olmalıdır.
+        String[] display = new String[secilenKelime.length()];
+        for (int i = 0; i < secilenKelime.length(); i++) {
+            display[i] = "_";
+        }
+        Scanner scanner = new Scanner(System.in);
+        int hak = 6;
+        while (hak > 0) {
+            System.out.print("Bir harf tahmin et: ");
+            String tahmin = scanner.nextLine();
+            tahmin = tahmin.toLowerCase();
+            boolean dogruTahmin = false;
+            for (int i = 0; i < secilenKelime.length(); i++) {
+                if (secilenKelime.charAt(i) == tahmin.charAt(0)) {
+                    display[i] = Character.toString(tahmin.charAt(0));
+                    dogruTahmin = true;
+                }
+            }
+            if (!dogruTahmin) {
+                hak--;
+                System.out.println("Yanlış tahmin! Kalan hak sayısı: " + hak);
+            } else {
+                System.out.println("Doğru tahmin!");
+            }
+            for (int i = 0; i < display.length; i++) {
+                System.out.print(display[i] + " ");
+            }
+            System.out.println();
+            if (!Arrays.asList(display).contains("_")) {
+                System.out.println("Tebrikler, kelimeyi buldunuz!");
+                break;     }
+        }
+        if (hak == 0) {
+            System.out.println("Maalesef, oyunu kaybettiniz. Kelime: " + secilenKelime);
+        }
+    }
+}
